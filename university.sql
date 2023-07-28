@@ -30,6 +30,11 @@ FROM `exams`
 WHERE `hour` > '14:00:00'
 AND `date` = '2020-06-20';
 
+SELECT * 
+FROM `exams`
+WHERE HOUR(`hour`) > '14:00:00'
+AND `date` = '2020-06-20';
+
 -- SELEZIONARE TUTTI I CORSI DI LAUREA MAGISTRALE
 
 SELECT * 
@@ -47,4 +52,14 @@ SELECT COUNT(*)
 FROM `teachers`
 WHERE `phone` IS NULL;
 
---
+-------------------------------------------------------
+-- PARTE GROUP BY
+-------------------------------------------------------
+
+-- CONTARE QUANTI ISCRITTI CI SONO STATI OGNI ANNO
+
+SELECT COUNT(*) AS `n_enrolled_students`
+FROM `students`
+GROUP BY YEAR(`enrolment_date`);
+
+
