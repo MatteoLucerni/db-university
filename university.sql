@@ -58,8 +58,12 @@ WHERE `phone` IS NULL;
 
 -- CONTARE QUANTI ISCRITTI CI SONO STATI OGNI ANNO
 
-SELECT COUNT(*) AS `n_enrolled_students`
+SELECT COUNT(*) AS `n_enrolled_students`, YEAR(`enrolment_date`) AS `year`
 FROM `students`
 GROUP BY YEAR(`enrolment_date`);
 
+-- CONTARE GLI INSEGNANTI CHE HANNO L'UFFICIO NELLO STESSI EDIFICIO
 
+SELECT COUNT(*) AS `n_teachers`, `office_address`
+FROM `teachers`
+GROUP BY `office_address`;
