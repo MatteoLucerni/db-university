@@ -74,3 +74,8 @@ SELECT AVG(`vote`), `exam_id`
 FROM `exam_student`
 GROUP BY `exam_id`;
 
+-- CONTARE QUANTI CORSI DI LAUREA CI SONO PER OGNI DIPARTIMENTO
+
+SELECT COUNT(*) AS `n_degrees`, `department_id`
+FROM `degrees`
+GROUP BY `department_id`;
