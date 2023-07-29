@@ -27,12 +27,7 @@ AND `year` = 1;
 
 SELECT * 
 FROM `exams`
-WHERE `hour` > '14:00:00'
-AND `date` = '2020-06-20';
-
-SELECT * 
-FROM `exams`
-WHERE HOUR(`hour`) > '14:00:00'
+WHERE HOUR(`hour`) >= '14'
 AND `date` = '2020-06-20';
 
 -- SELEZIONARE TUTTI I CORSI DI LAUREA MAGISTRALE
