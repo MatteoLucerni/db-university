@@ -87,3 +87,11 @@ FROM `students` AS S
 JOIN `degrees` AS D
 ON S.`degree_id` = D.`id`
 WHERE S.`degree_id` = 53;
+
+-- Selezionare tutti i Corsi di Laurea del Dipartimento di Neuroscienze
+
+SELECT DEG.`id`, DEG.`name`, DEP.`name`
+FROM `degrees` AS DEG
+JOIN `departments` AS DEP
+ON DEG.`department_id` = DEP.`id`
+WHERE DEP.`id` = 7;
