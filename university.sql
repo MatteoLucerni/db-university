@@ -95,3 +95,13 @@ FROM `degrees` AS DEG
 JOIN `departments` AS DEP
 ON DEG.`department_id` = DEP.`id`
 WHERE DEP.`id` = 7;
+
+-- Selezionare tutti i corsi in cui insegna Fulvio Amato (id=44)
+
+SELECT C.`name` AS `course_name`, T.`name` AS `teacher_name`, T.`surname` AS `teacher_surname`
+FROM `courses` AS C
+JOIN `course_teacher` AS CT
+ON C.`degree_id` = CT.`course_id`
+JOIN `teachers` AS T
+ON CT.`teacher_id` = T.`id`
+WHERE T.`id` = 44;
