@@ -153,3 +153,15 @@ ON C.`degree_id` = DEG.`id`
 JOIN `departments` AS DEP
 ON DEG.`department_id` = DEP.`id`
 WHERE DEP.`id` = 5
+
+-- BONUS: Selezionare per ogni studente quanti tentativi d’esame ha sostenuto per superare ciascuno dei suoi esami
+
+SELECT COUNT(S.`id`)
+FROM `students` AS S
+JOIN `exam_student` AS ES
+ON S.`id` = ES.`student_id`
+JOIN `exams` AS E
+ON ES.`exam_id` = E.`id`
+JOIN `courses` AS C
+ON E.`course_id` = C.`id`
+GROUP BY ES.`exam_id`;
