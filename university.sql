@@ -119,4 +119,5 @@ FROM `students` AS S
 JOIN `degrees` AS DEG
 ON S.`degree_id` = DEG.`id`
 JOIN `departments` AS DEP
-ON DEG.`department_id` = DEP.`id`;
+ON DEG.`department_id` = DEP.`id`
+ORDER BY S.`surname` ASC, S.`name` ASC;
