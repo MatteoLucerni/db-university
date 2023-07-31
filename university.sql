@@ -48,7 +48,7 @@ FROM `teachers`
 WHERE `phone` IS NULL;
 
 -------------------------------------------------------
--- PARTE GROUP BY
+-- ! PARTE GROUP BY
 -------------------------------------------------------
 
 -- CONTARE QUANTI ISCRITTI CI SONO STATI OGNI ANNO
@@ -74,3 +74,16 @@ GROUP BY `exam_id`;
 SELECT COUNT(*) AS `n_degrees`, `department_id`
 FROM `degrees`
 GROUP BY `department_id`;
+
+
+-------------------------------------------------------
+-- ! PARTE Queries con JOIN
+-------------------------------------------------------
+
+-- Selezionare tutti gli studenti iscritti al Corso di Laurea in Economia
+
+SELECT S.`name`, S.`surname`, S.`registration_number`, D.`name`
+FROM `students` AS S
+JOIN `degrees` AS D
+ON S.`degree_id` = D.`id`
+WHERE S.`degree_id` = 53;
