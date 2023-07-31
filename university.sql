@@ -153,4 +153,3 @@ ON C.`degree_id` = DEG.`id`
 JOIN `departments` AS DEP
 ON DEG.`department_id` = DEP.`id`
 WHERE DEP.`id` = 5
-ORDER BY T.`surname` ASC, T.`name` ASC;
